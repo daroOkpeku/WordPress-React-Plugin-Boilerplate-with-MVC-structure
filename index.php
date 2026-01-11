@@ -2,16 +2,22 @@
 
 use PhpSPA\App;
 
-$app = new App(require __DIR__ . '/view/layout/Layout.php')
+require_once __DIR__ . '/vendor/autoload.php';
 
-    ->attach()
+$viewPath = plugin_dir_path(__FILE__) . '/view';
+
+return new App(require "$viewPath/layout/Layout.php")
+
+    // --- Add view files here ---
+    ->attach(require "$viewPath/Home.php")
+    ->attach(require "$viewPath/Stories.php")
 
     ->defaultTargetID('great-react-root')
 
     // --- Global Script ---
     ->script(fn() => <<<JS
-        console.log('home.php: Element exists?', !!document.getElementById('great-react-root'));
+        console.log('Global Script: Element exists?', !!document.getElementById('great-react-root'));
     JS)
 
-    // --- True to get the output ---
+    // --- True to get/return the output ---
     ->run(true);

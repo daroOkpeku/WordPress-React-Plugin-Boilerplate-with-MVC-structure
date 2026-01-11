@@ -23,12 +23,14 @@ return new Component(function() {
             <div id="great-react-root" data-page="stories">
                 <p>Loading React App...stop</p>
             </div>
-
-            <script>
-                // console.log('stories.php loaded');
-                // console.log('Element exists:', !!document.getElementById('great-react-root'));
-                // console.log('Full element:', document.getElementById('great-react-root'));
-            </script>
         </div>
     HTML;
-});
+})
+    ->title(esc_html(get_admin_page_title()))
+    ->route('/stories')
+
+    ->script(fn() => <<<JS
+        console.log('stories.php loaded');
+        console.log('Element exists:', !!document.getElementById('great-react-root'));
+        console.log('Full element:', document.getElementById('great-react-root'));
+    JS);
