@@ -83,7 +83,7 @@ Add the following shortcode to any post or page to display the frontend view:
 
 ## Support
 
-For support, please open an issue in the plugin's GitHub repository or contact support@example.com
+For support, please open an issue in the plugin's GitHub repository or contact okpekuighodaro@gmail.com
 
 ## Changelog
 
