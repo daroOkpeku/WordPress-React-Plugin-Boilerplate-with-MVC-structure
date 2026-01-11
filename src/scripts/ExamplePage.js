@@ -29,17 +29,17 @@ function ExamplePage(props) {
 
           <section className="w-1/2  px-2 ">
             <div className="w-full flex flex-row">
-              <section className="w-[120px] h-[120px] rounded-full overflow-hidden ">
+              {/* <section className="w-[120px] h-[120px] rounded-full overflow-hidden ">
                 <img
                   src="https://ik.imagekit.io/9nikkw38wtz/Dabar_4cNDhyRDV?updatedAt=1706102750298"
                   className="w-full h-full object-cover"
                 />
-              </section>
+              </section> */}
               <article className="w-3/5">
                 <ul className="w-full">
-                  <li className="text-xs font-medium">
+                  {/* <li className="text-xs font-medium">
                     Created by: Okpeku Stephen Ighodaro
-                  </li>
+                  </li> */}
                   <li className="text-xs font-medium">
                     Tech Stack: PHP, React.js, Tailwind CSS, MySQL
                   </li>

@@ -9,7 +9,7 @@ function Homestart(props) {
   };
   return (
     <div className="w-full">
-      <div className="w-[55%] m-auto py-2 px-2 border border-sm  flex flex-col  justify-center items-center shadom-sm gap-3 h-60">
+      <div className="w-[55%] m-auto py-2 px-2 border border-sm  flex flex-col  justify-center items-center shadom-sm gap-3 ">
         <h2 className="text-lg font-sans text-blue-400">
           WordPress React Plugin Boilerplate with MVC Structure
         </h2>
@@ -23,6 +23,9 @@ function Homestart(props) {
           Please make contribution and correction to this Plugin{" "}
         </h5>
 
+        <h5 className="text-base font-medium">
+          Shortcode: [great-react-plugin]{" "}
+        </h5>
         <span className="w-full px-2 flex flex-row gap-1">
           <h2 className="capitalize text-sm text-black">next page</h2>{" "}
           <h2
