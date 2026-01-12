@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Great React PLUGIN
  * Author: Stephen Okpeku
- * Description: WordPress React Plugin Boilerplate with MVC Structure
+ * Description: WordPress React Plugin Boilerplate with MVC Structure, shortcode:[great-react-plugin]
  * Version: 1.0
  * Text Domain: Great React PLUGIN
  * Text Domain: Great React PLUGIN
