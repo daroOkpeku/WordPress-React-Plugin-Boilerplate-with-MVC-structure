@@ -6,7 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $viewPath = plugin_dir_path(__FILE__) . '/view';
 
-return new App(require "$viewPath/layout/Layout.php")
+return (new App(require "$viewPath/layout/Layout.php"))
 
     // --- Add view files here ---
     ->attach(require "$viewPath/Home.php")
