@@ -1,0 +1,5 @@
+{
+    "require": {
+        "dconco/phpspa": "dev-support/php-8.2"
+    }
+}
