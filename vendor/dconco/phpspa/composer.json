@@ -1,0 +1,64 @@
+{
+	"name": "dconco/phpspa",
+	"type": "library",
+	"description": "A component-based library for building modern, reactive user interfaces in pure PHP. Inspired by React. ✨",
+	"keywords": [
+		"php",
+		"spa",
+		"phpspa",
+		"jsx",
+		"component-based",
+		"component-library"
+	],
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"PhpSPA\\": "app/client/",
+			"PhpSPA\\Core\\": "app/core/",
+			"PhpSPA\\Interfaces\\": "app/interfaces/",
+			"PhpSPA\\Exceptions\\": "app/exceptions/"
+		},
+		"files": [
+			"app/core/Impl/Const/StateConstant.php",
+			"app/client/Component/component.php",
+			"app/client/Http/Redirect.php",
+			"src/global/autoload.php"
+		]
+	},
+	"authors": [
+		{
+			"name": "Dave Conco",
+			"email": "me@dconco.tech",
+			"role": "Author & Maintainer",
+			"homepage": "https://dconco.github.io"
+		},
+		{
+			"name": "Samuel Paschalson",
+			"email": "samuelpaschalson@gmail.com",
+			"role": "Contributor",
+			"homepage": "https://samuel-paschalson.netlify.app"
+		}
+	],
+	"require": {
+		"php": "^8.2"
+	},
+	"prefer-stable": true,
+	"minimum-stability": "stable",
+	"scripts": {
+		"test": "php tests/Test.php",
+		"test:async": "php tests/Test.php --async",
+		"start": [
+			"Composer\\Config::disableProcessTimeout",
+			"php -S localhost:8000 -t examples"
+		],
+		"serve-api": [
+			"Composer\\Config::disableProcessTimeout",
+			"php -S localhost:8001 -t examples/api"
+		],
+		"docs:serve": [
+			"Composer\\Config::disableProcessTimeout",
+			"py -m mkdocs serve --dev-addr=127.0.0.1:4000 --watch docs --watch mkdocs.yml --livereload"
+		],
+		"docs:build": "py -m mkdocs build --clean --site-dir build"
+	}
+}

@@ -1,6 +1,11 @@
 <?php
 defined('ABSPATH') or die('You are not allowed to access this page');
 
+require_once plugin_dir_path(__FILE__) . 'Controller/viewController.php';
+
+use Controller\viewController;
+
+
 class Great_React_Plugin
 {
     public function __construct()
@@ -105,22 +110,25 @@ class Great_React_Plugin
         register_post_type("great-react-plugin", $args);
     }
 
-    // --- This function should handle all pages, edit the pages @ index.php ---
     public function renderView()
     {
         // Add debugging
         error_log('Great React Plugin: renderView called');
 
-        $appOutput = require plugin_dir_path(__FILE__) . '/index.php';
+        ob_start();
+        $controller = new viewController();
+        $controller->render();
+        // $controller->renderStories();
+        $output = ob_get_clean();
 
         // Log if output is empty
-        if (empty($appOutput)) {
+        if (empty($output)) {
             error_log('Great React Plugin: renderView output is empty!');
         } else {
-            error_log('Great React Plugin: renderView output length: ' . strlen($appOutput));
+            error_log('Great React Plugin: renderView output length: ' . strlen($output));
         }
 
-        return $appOutput;
+        return $output;
     }
 
     public function register_admin_menu()
@@ -131,7 +139,7 @@ class Great_React_Plugin
             'Great React Plugin', // Menu title
             'manage_options',     // Capability required
             'great-react-plugin',  // Slug (used in URL)
-            array($this, 'renderView'), // Callback function to display page
+            array($this, 'admin_page_callback'), // Callback function to display page
             'dashicons-welcome-learn-more' // Icon  or use this icon dashicons-admin-generic
         );
 
@@ -142,13 +150,27 @@ class Great_React_Plugin
             'My Sub Menu',              // Submenu title
             'manage_options',           // Capability required
             'stories',       // Submenu slug
-            array($this, 'renderView'),
+            array($this, 'stories_page_content'),
             // 'my_plugin_sub_page_content' // Callback function to render content
         );
 
         error_log('Great React Plugin: Menu registered with hook: ' . $hook);
     }
 
+    public function admin_page_callback()
+    {
+        error_log('Great React Plugin: admin_page_callback called');
+
+        $controller = new viewController();
+        return  $controller->render();
+    }
+
+    public function stories_page_content()
+    {
+        error_log('Great React Plugin: stories_page_content called');
+        $controller = new viewController();
+        return  $controller->renderStories();
+    }
 }
 
 add_action('plugins_loaded', function () {
