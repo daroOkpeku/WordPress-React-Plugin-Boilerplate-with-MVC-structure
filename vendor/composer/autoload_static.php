@@ -6,39 +6,17 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit105264189a894410809b5dc48d760e80
 {
-    public static $files = array (
-        'cc9439bbc85f1c594c669d2f04b14500' => __DIR__ . '/..' . '/dconco/phpspa/app/core/Impl/Const/StateConstant.php',
-        '52c799c382ec0672f8d85bd6ba0b10ff' => __DIR__ . '/..' . '/dconco/phpspa/app/client/Component/component.php',
-        '2951739a56c724f4e27fec1017a5fa68' => __DIR__ . '/..' . '/dconco/phpspa/app/client/Http/Redirect.php',
-        '7d1ae7329aaf1aff17c09ad4f0b1b19b' => __DIR__ . '/..' . '/dconco/phpspa/src/global/autoload.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'F' => 
         array (
-            'PhpSPA\\Interfaces\\' => 18,
-            'PhpSPA\\Exceptions\\' => 18,
-            'PhpSPA\\Core\\' => 12,
-            'PhpSPA\\' => 7,
+            'Firebase\\JWT\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PhpSPA\\Interfaces\\' => 
+        'Firebase\\JWT\\' => 
         array (
-            0 => __DIR__ . '/..' . '/dconco/phpspa/app/interfaces',
-        ),
-        'PhpSPA\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dconco/phpspa/app/exceptions',
-        ),
-        'PhpSPA\\Core\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dconco/phpspa/app/core',
-        ),
-        'PhpSPA\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dconco/phpspa/app/client',
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
     );
 

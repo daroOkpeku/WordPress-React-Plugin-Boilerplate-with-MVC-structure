@@ -10,11 +10,14 @@
  */
 
 defined('ABSPATH') or die('You are not allowed to access this page');
-
+require_once __DIR__ . '/vendor/autoload.php';  //to load the  jwt and other packages
 require_once plugin_dir_path(__FILE__) . 'Controller/viewController.php';
+// require_once plugin_dir_path(__FILE__) . 'Controller/AuthController.php';
+require_once plugin_dir_path(__FILE__) . 'routes/api.php';
+
 
 use Controller\viewController;
-
+use routes\API;
 
 class Great_React_Plugin
 {
@@ -33,6 +36,28 @@ class Great_React_Plugin
         add_action('wp_enqueue_scripts', array($this, 'my_react_plugin_enqueue_assets'));
         add_action('admin_enqueue_scripts', array($this, 'my_react_plugin_enqueue_assets'));
         // Enqueue for both frontend AND admin
+
+        // Add these lines to your wp-config.php first option
+        // https://api.wordpress.org/secret-key/1.1/salt/ this is to generate jwt secret 
+        // define('JWT_AUTH_SECRET_KEY', 'your-secret-key-goes-here');
+        // define('JWT_AUTH_CORS_ENABLE', true);
+        // define('JWT_AUTH_EXPIRATION', 86400);
+        // second option
+        // run this composer require firebase/php-jwt to generate token without the plugin
+
+        add_filter('jwt_auth_whitelist', 'my_plugin_jwt_whitelist');
+
+        // new AuthController();
+        new API();
+    }
+
+
+    function my_plugin_jwt_whitelist($endpoints)
+    {
+        return array_merge($endpoints, [
+            '/wp-json/great_react/v1/protected',
+            '/wp-json/great_react/v1/*', // Whitelist all your routes
+        ]);
     }
 
     function my_react_plugin_enqueue_assets($hook)

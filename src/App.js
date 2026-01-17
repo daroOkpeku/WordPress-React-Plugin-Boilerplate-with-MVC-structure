@@ -5,8 +5,11 @@ import ExamplePage from "./scripts/ExamplePage";
 // import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 function App() {
   const baseUrl = window.GreatReactData?.baseUrl || "/";
+  console.log(baseUrl);
+  //api route: http://localhost/wordpress-React/wp-json/great_react/v1/tasks
 
-  return (
+  //localhost/wordpress-React/wp-admin
+  http: return (
     <HashRouter>
       {/* <nav>{"navigator link"}</nav> */}
       <Routes>

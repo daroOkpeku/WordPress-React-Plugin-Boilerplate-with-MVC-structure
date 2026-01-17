@@ -6,8 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PhpSPA\\Interfaces\\' => array($vendorDir . '/dconco/phpspa/app/interfaces'),
-    'PhpSPA\\Exceptions\\' => array($vendorDir . '/dconco/phpspa/app/exceptions'),
-    'PhpSPA\\Core\\' => array($vendorDir . '/dconco/phpspa/app/core'),
-    'PhpSPA\\' => array($vendorDir . '/dconco/phpspa/app/client'),
+    'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
 );
