@@ -88,7 +88,7 @@ class API
             'callback' => [$auth, 'my_plugin_protected_route'],
             // 'permission_callback' => '__return_true',
             //'permission_callback' => [$this, 'my_plugin_verify_jwt'],
-            'permission_callback' => [$authmiddleware, 'my_plugin_verify_jwt']
+            'permission_callback' => [$authmiddleware, 'my_plugin_verify_jwt'] //middleware
         ]);
     }
 }
