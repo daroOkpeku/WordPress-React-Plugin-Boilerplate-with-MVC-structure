@@ -8,8 +8,8 @@ function App() {
   console.log(baseUrl);
   //api route: http://localhost/wordpress-React/wp-json/great_react/v1/tasks
 
-  //localhost/wordpress-React/wp-admin
-  http: return (
+  //http://localhost/wordpress-React/wp-admin
+  return (
     <HashRouter>
       {/* <nav>{"navigator link"}</nav> */}
       <Routes>

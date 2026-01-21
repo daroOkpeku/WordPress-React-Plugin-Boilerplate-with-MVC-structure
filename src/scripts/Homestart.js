@@ -16,7 +16,7 @@ function Homestart(props) {
 
         <h5 className="text-base font-medium">
           An open-source WordPress plugin boilerplate with an MVC structure,
-          React.js, and Tailwind CSS, designed to let developers start coding
+          React.js, JWT and Tailwind CSS, designed to let developers start coding
           immediately without setup.
         </h5>
         <h5 className="text-base font-medium">

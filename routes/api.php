@@ -8,9 +8,7 @@ require_once plugin_dir_path(__FILE__) . "../Middleware/AuthMiddleware.php";
 
 use Controller\AuthController;
 use Middlware\AuthMiddleware;
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
-use WP_Error;
+
 
 class API
 {
